@@ -11,8 +11,11 @@
 export function rotate1(arr: number[], k: number): number[] {
   const length = arr.length
   if (!k || length === 0) return arr
+  // 取绝对值，以防 k 是负数
+  // 取余，以防 k 大于 length
   const step = Math.abs(k % length)
 
+  // O(n^2)
   for (let i = 0; i < step; i++) {
     const n = arr.pop()
     if (n != null) {
@@ -46,8 +49,8 @@ export function rotate2(arr: number[], k: number): number[] {
 // console.log('res', res)
 
 // 性能测试
-// rotate1 0.040ms
-const k = 3
+// rotate1 1002ms
+const k = 90000
 const arr1 = []
 for (let i = 0; i < 10 * 10000; i++) {
   arr1.push(i)
@@ -56,7 +59,7 @@ console.time('rotate1')
 rotate1(arr1, k)
 console.timeEnd('rotate1')
 
-// rotate2 0.006ms
+// rotate2 0.47ms
 const arr2 = []
 for (let i = 0; i < 10 * 10000; i++) {
   arr2.push(i)

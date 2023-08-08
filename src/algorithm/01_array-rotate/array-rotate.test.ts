@@ -1,15 +1,15 @@
-import { describe, expect, test } from "vitest";
-import { rotate2 } from "./rotate";
+import { describe, expect, it } from "vitest";
+import { rotate2 } from "./array-rotate";
 
 describe('数组旋转', () => {
-  test('正常情况', () => {
+  it('正常情况', () => {
     const arr = [1, 2, 3, 4, 5, 6, 7]
     const k = 3
     const res = rotate2(arr, k)
     expect(res).toEqual([5, 6, 7, 1, 2, 3, 4])
   })
   
-  test('数组为空', () => {
+  it('数组为空', () => {
     // @ts-ignore
     const arr = []
     const k = 3
@@ -18,14 +18,14 @@ describe('数组旋转', () => {
     expect(res).toEqual([])
   })
   
-  test('k 为负数', () => {
+  it('k 为负数', () => {
     const arr = [1, 2, 3, 4, 5, 6, 7]
     const k = -3
     const res = rotate2(arr, k)
     expect(res).toEqual([5, 6, 7, 1, 2, 3, 4])
   })
   
-  test('k 不是数字', () => {
+  it('k 不是数字', () => {
     const arr = [1, 2, 3, 4, 5, 6, 7]
     const k = 'abc'
     // @ts-ignore
@@ -33,7 +33,7 @@ describe('数组旋转', () => {
     expect(res).toEqual(arr)
   })
   
-  test('k 是 undefined', () => {
+  it('k 是 undefined', () => {
     const arr = [1, 2, 3, 4, 5, 6, 7]
     const k = undefined
     // @ts-ignore
@@ -41,7 +41,7 @@ describe('数组旋转', () => {
     expect(res).toEqual(arr)
   })
   
-  test('k 是 0', () => {
+  it('k 是 0', () => {
     const arr = [1, 2, 3, 4, 5, 6, 7]
     const k = undefined
     // @ts-ignore
