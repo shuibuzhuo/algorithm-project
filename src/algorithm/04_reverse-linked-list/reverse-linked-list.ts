@@ -1,0 +1,37 @@
+/**
+ * @description 反转单向链表
+ * @author shuibuzhuo
+ */
+type LinkedListNode = {
+  value: number,
+  next?: LinkedListNode
+}
+
+/**
+ * 根据数组，创建单向链表
+ * @param arr 输入的数组
+ */
+function createLinkedList(arr: number[]): LinkedListNode {
+  const length = arr.length
+  if (length === 0) throw new Error('arr is empty')
+
+  let curNode: LinkedListNode = {
+    value: arr[length - 1]
+  }
+
+  if (length === 1) return curNode
+
+  for (let i = length - 2; i >= 0; i--) {
+    curNode = {
+      value: arr[i],
+      next: curNode
+    }
+  }
+
+  return curNode
+}
+
+// 功能测试
+const arr = [100, 200, 300, 400, 500]
+const res = createLinkedList(arr)
+console.log('res', res)

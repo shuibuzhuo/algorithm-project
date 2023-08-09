@@ -1,1 +1,1 @@
-import './algorithm/03_two-stacks-one-queue/two-stacks-one-queue'
+import './algorithm/04_reverse-linked-list/reverse-linked-list'
