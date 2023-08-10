@@ -56,3 +56,5 @@ export function matchBrackets(str: string): boolean {
 const str = '(a{b[c]d}e)'
 const res = matchBrackets(str)
 console.log('res', res)
+
+export {}

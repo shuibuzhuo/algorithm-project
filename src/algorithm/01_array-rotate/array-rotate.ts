@@ -67,3 +67,5 @@ for (let i = 0; i < 10 * 10000; i++) {
 console.time('rotate2')
 rotate2(arr2, k)
 console.timeEnd('rotate2')
+
+export {}

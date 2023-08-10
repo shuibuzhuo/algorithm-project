@@ -1,1 +1,1 @@
-import './algorithm/04_reverse-linked-list/reverse-linked-list'
+import './algorithm/05_queue-using-linked-list/queue-using-linked-list'
