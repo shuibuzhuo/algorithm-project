@@ -1,1 +1,1 @@
-import './algorithm/05_queue-using-linked-list/queue-using-linked-list'
+import './algorithm/05_binary-search/binary-search'
