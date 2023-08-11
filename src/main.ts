@@ -1,1 +1,1 @@
-import './algorithm/05_binary-search/binary-search'
+import './algorithm/06_two-numbers-sum/two-numbers-sum'
