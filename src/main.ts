@@ -1,1 +1,1 @@
-import './algorithm/08_move-zero/move-zero'
+import './algorithm/09_move-zero/move-zero'

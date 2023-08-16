@@ -3,13 +3,15 @@
  * @author shuibuzhuo
  */
 
-type TreeNode = {
+export type TreeNode = {
   value: number
   left: TreeNode | null
   right: TreeNode | null
 }
 
-const bst: TreeNode = {
+// 保存中序遍历后的数字的一个数组
+const arr: number[] = []
+export const bst: TreeNode = {
   value: 5,
   left: {
       value: 3,
@@ -45,7 +47,8 @@ const bst: TreeNode = {
  */
 function preOrderTraverse(node: TreeNode | null) {
   if (node == null) return
-  console.log(node.value)
+  // console.log(node.value)
+  arr.push(node.value)
   preOrderTraverse(node.left)
   preOrderTraverse(node.right)
 }
@@ -57,7 +60,8 @@ function preOrderTraverse(node: TreeNode | null) {
 function inOrderTraverse(node: TreeNode | null) {
   if (node == null) return
   inOrderTraverse(node.left)
-  console.log(node.value)
+  // console.log(node.value)
+  arr.push(node.value)
   inOrderTraverse(node.right)
 }
 
@@ -69,10 +73,26 @@ function postOrderTraverse(node: TreeNode | null) {
   if (node == null) return
   postOrderTraverse(node.left)
   postOrderTraverse(node.right)
-  console.log(node.value)
+  // console.log(node.value)
+  arr.push(node.value)
+}
+
+/**
+ * 寻找 bst 中第 k 小值
+ * @param arr arr
+ * @param k 要找的第 k 小值
+ */
+export function findKthValue(node: TreeNode, k: number): number | null {
+  inOrderTraverse(node)
+  console.log('arr', arr);
+  
+  return arr[k - 1] || null
 }
 
 // 功能测试
 // preOrderTraverse(bst)
 // inOrderTraverse(bst)
-postOrderTraverse(bst)
+// postOrderTraverse(bst)
+console.log(findKthValue(bst, 3))
+
+export {}
