@@ -55,6 +55,32 @@ export function moveZero2(arr: number[]): void {
   }
 }
 
-const arr = [1, 3, 0, 5, 8, 0, 0]
-moveZero2(arr)
-console.log(arr)
+// // 功能测试
+// const arr = [1, 3, 0, 5, 8, 0, 0]
+// moveZero2(arr)
+// console.log(arr)
+
+// 性能测试
+const arr1 = []
+for (let i = 0; i < 20 * 10000; i++) {
+  if (i % 10 === 0) {
+    arr1.push(0)
+  } else {
+    arr1.push(i)
+  }
+}
+console.time('moveZero1')
+moveZero1(arr1)
+console.timeEnd('moveZero1') // 204ms
+
+const arr2 = []
+for (let i = 0; i < 20 * 10000; i++) {
+  if (i % 10 === 0) {
+    arr2.push(0)
+  } else {
+    arr2.push(i)
+  }
+}
+console.time('moveZero2')
+moveZero2(arr2)
+console.timeEnd('moveZero2') // 2.2ms 

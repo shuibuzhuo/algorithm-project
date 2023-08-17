@@ -12,7 +12,7 @@ type ResType = {
  * 嵌套循环
  * @param str 输入的字符串
  */
-export function continuousChar(str: string): ResType {
+export function continuousChar1(str: string): ResType {
   const res: ResType = {
     char: '',
     len: 0
@@ -49,6 +49,10 @@ export function continuousChar(str: string): ResType {
   return res
 }
 
+export function continuousChar2(str: string) {
+  
+}
+
 // 功能测试
 const str = 'aaabbccd'
-console.log(continuousChar(str))
+console.log(continuousChar1(str))
