@@ -12,7 +12,7 @@ type ResType = {
  * 嵌套循环
  * @param str 输入的字符串
  */
-function continuousChar(str: string): ResType {
+export function continuousChar(str: string): ResType {
   const res: ResType = {
     char: '',
     len: 0
