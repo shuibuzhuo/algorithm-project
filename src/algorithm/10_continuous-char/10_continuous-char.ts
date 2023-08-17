@@ -9,6 +9,7 @@ type ResType = {
 }
 
 /**
+ * 嵌套循环
  * @param str 输入的字符串
  */
 function continuousChar(str: string): ResType {
@@ -20,21 +21,26 @@ function continuousChar(str: string): ResType {
   const length = str.length
   if (length === 0) return res
 
+  let tempLength = 0 // 临时变量，用于记录连续字符的长度
   
   for (let i = 0; i < length; i++) {
-    let tempLength = 0 // 临时变量，用于记录长度
+    tempLength = 0 // 重置
     
     for (let j = i; j < length; j++) {
       if (str[i] === str[j]) {
         tempLength++
       }
       if (str[i] !== str[j] || j === length - 1) {
+        // i 和 j 指向的数不相等，或者 j 已经指向了最后一个元素，就判断一下当前的值和返回的值的大小
         if (tempLength > res.len) {
           res.char = str[i]
           res.len = tempLength
         }
         
-        i = j - 1
+        if (i < length - 1) {
+          i = j - 1 // i 还没有走完，那么 i 就跳步
+        }
+
         break;
       }
     }
@@ -45,4 +51,4 @@ function continuousChar(str: string): ResType {
 
 // 功能测试
 const str = 'aaabbccd'
-// console.log(continuousChar(str))
+console.log(continuousChar(str))

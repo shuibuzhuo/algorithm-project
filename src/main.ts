@@ -1,1 +1,1 @@
-import './algorithm/09_move-zero/move-zero'
+import './algorithm/10_continuous-char/10_continuous-char'
