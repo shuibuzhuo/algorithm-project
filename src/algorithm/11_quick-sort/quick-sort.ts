@@ -59,6 +59,33 @@ export function quickSort2(arr: number[]): number[] {
   return quickSort2(left).concat([midValue], quickSort2(right))
 }
 
-// 功能测试
-const arr = [1, 3, 2, 5, 4, 9, 7, 8]
-console.log(quickSort2(arr))
+// // 功能测试
+// const arr = [1, 3, 2, 5, 4, 9, 7, 8]
+// console.log(quickSort2(arr))
+
+// 性能测试
+const arr = []
+for (let i = 0; i < 20 * 10000; i++) {
+  arr.push(Math.floor(Math.random() * 1000))
+}
+
+// console.time('quickSort1')
+// quickSort1(arr)
+// console.timeEnd('quickSort1') // 133ms
+
+// console.time('quickSort2')
+// quickSort2(arr)
+// console.timeEnd('quickSort2') // 134ms
+
+// 单独比较 splice slice
+console.time('splice')
+for (let i = 0; i < 10000; i++) {
+  arr.splice(10 * 10000, 1)
+}
+console.timeEnd('splice') // 86ms
+
+console.time('slice')
+for (let i = 0; i < 10000; i++) {
+  arr.slice(10 * 10000, 10 * 10000 + 1)
+}
+console.timeEnd('slice') // 0.37ms
