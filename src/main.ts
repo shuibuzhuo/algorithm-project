@@ -1,1 +1,1 @@
-import './algorithm/11_quick-sort/quick-sort'
+import './algorithm/12_palindrome-number/palindrome-number'
