@@ -13,7 +13,7 @@ export function findPalindromeNumber1(max: number): number[] {
 
   for (let i = 1; i <= max; i++) {
     const s = i.toString()
-    const rev = i.toString().split('').reverse().join('')
+    const rev = s.split('').reverse().join('')
     if (s === rev) {
       res.push(i)
     }
@@ -30,14 +30,15 @@ export function findPalindromeNumber2(max: number): number[] {
   const res: number[] = []
   if (max <= 0) return res
 
-  for (let i = 1; i < max; i++) {
+  for (let i = 1; i <= max; i++) {
     const s = i.toString()
     const length = s.length
+    
     let flag = true
-    for (let j = 0; j < length; j++) {
-      let startIndex = 0;
-      let endIndex = length - 1
+    let startIndex = 0;
+    let endIndex = length - 1
 
+    while (startIndex < endIndex) {
       if (s[startIndex] !== s[endIndex]) {
         flag = false
         break;
