@@ -1,1 +1,1 @@
-import './algorithm/11_quick-sort/quick-sort'
+import './algorithm/10_continuous-char/10_continuous-char'
