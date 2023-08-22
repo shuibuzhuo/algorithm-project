@@ -50,6 +50,7 @@ export function moveZero2(arr: number[]): void {
       arr[i] = arr[j]
       arr[j] = n
       
+      // j++ 使得 j 指向第一个 0
       j++
     }
   }
