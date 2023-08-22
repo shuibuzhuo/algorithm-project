@@ -13,6 +13,11 @@ export function fibonacci1(n: number): number {
   return fibonacci1(n - 1) + fibonacci1(n - 2)
 }
 
+/**
+ * 循环
+ * @param n 第 n 个元素
+ * @returns 
+ */
 export function fibonacci2(n: number) {
   if (n <= 0) return 0
   if (n === 1) return 1
